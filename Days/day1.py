@@ -1,20 +1,20 @@
 def runDay(input):
     
     print("Part 1")
-    increases = 0
-    input = [int(i) for i in input]
-    increases = getIncreases(input)
-    print(increases)
-
+    difference = 0
+    input = [i.replace("\n","").split("   ") for i in input]
+    l = []
+    r = []
+    for i in input:
+        l.append(int(i[0]))
+        r.append(int(i[1]))
+    l.sort()
+    r.sort()
+    for i in range(0,len(l)):
+        difference += abs(l[i]-r[i])
+    print(difference)
     print("Part 2")
-    chunks = [sum(input[x:x+3]) for x in range(0, len(input))]
-    increases = getIncreases(chunks)
-    print(increases)
-    
-    
-def getIncreases(input):
-    increases = 0
-    for i in range(len(input)):    
-        if i!=0 and input[i] > input[i-1]:
-            increases += 1
-    return increases
+    similarity = 0
+    for i in l:
+        similarity += (i * r.count(i))
+    print(similarity)
