@@ -4,7 +4,6 @@ def runDay(input):
     p2 = 0
     directions=[]
     updates=[]
-    invalid=[]
     for i in input:
         i=i.replace("\n","")
         if "|" in i:
@@ -35,7 +34,7 @@ def search_nested_array(array, target):
     return [(i, j) for i, sub_array in enumerate(array) for j, element in enumerate(sub_array) if element == target]
 
 def is_valid(u,directions):
-    for c in u: #nt
+    for c in u:
         loc = search_nested_array(directions,c)
         for l in loc:
             if l[1] == 0 and directions[l[0]][1] in u and u.index(c) > u.index(directions[l[0]][1]):
@@ -43,7 +42,7 @@ def is_valid(u,directions):
     return True
 
 def is_valid_mod(u,directions):
-    for c in u: #nt
+    for c in u:
         loc = search_nested_array(directions,c)
         for l in loc:
             if l[1] == 0 and directions[l[0]][1] in u and u.index(c) > u.index(directions[l[0]][1]):
