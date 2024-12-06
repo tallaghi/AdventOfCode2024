@@ -46,6 +46,5 @@ def is_valid_mod(u,directions):
         loc = search_nested_array(directions,c)
         for l in loc:
             if l[1] == 0 and directions[l[0]][1] in u and u.index(c) > u.index(directions[l[0]][1]):
-                t = u[:u.index(directions[l[0]][1])] + [c] + [directions[l[0]][1]] + u[u.index(directions[l[0]][1])+1:u.index(c)]+  u[u.index(c)+1:]
-                return t
+                return u[:u.index(directions[l[0]][1])] + [c] + [directions[l[0]][1]] + u[u.index(directions[l[0]][1])+1:u.index(c)]+  u[u.index(c)+1:]                
     return u
