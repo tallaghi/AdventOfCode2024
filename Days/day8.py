@@ -18,14 +18,14 @@ def runDay(input):
                     if  i[j] in input[k]:
                         ixs=[q for q, x in enumerate(input[k]) if x == i[j]]
                         for ix in ixs:
-                            print(j,iiter)
-                            print(ix,k)
+                            #Part1
                             xdiff = j-ix
                             ydiff = k-iiter                            
                             if(ix-xdiff < xLen and ix-xdiff >= 0 and k+ydiff < yLen and k+ydiff >= 0 and (ix-xdiff,k+ydiff) not in antip1):
                                 antip1.append((ix-xdiff,k+ydiff))
                             if(j+xdiff < xLen and j+xdiff >= 0 and iiter-ydiff < yLen and iiter-ydiff >= 0 and (j+xdiff,iiter-ydiff) not in antip1):
                                 antip1.append((j+xdiff,iiter-ydiff))
+                            #Part2
                             bothOB=False
                             iteration=1
                             t_xdiff=0
